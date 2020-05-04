@@ -18,6 +18,8 @@ import wa from '../../static/wa.png';
 import feedback from '../../static/feedback.svg';
 import adobe from '../../static/adobe.svg';
 import delhigovt from '../../static/delhigovt.svg';
+import gplay from '../../static/gplay.svg';
+import appstore from '../../static/appstore.svg';
 
 class LandingPage extends React.Component {
   componentDidMount() {
@@ -43,10 +45,13 @@ class LandingPage extends React.Component {
           <div id="header--right">
           </div>
         </header>
-        <div>
-          <main>
-            <img className="logo" src={logo} style={{display: 'none'}} />
-            <h1>Delhi Government Lockdown Services</h1>
+        <main>
+          <img className="logo" src={logo} style={{display: 'none'}} />
+          <div className="maintitlebar">
+            <h1>Delhi Government<br />Lockdown Services</h1>
+            <img src={delhigovt} height="65px" />
+          </div>
+          <div id="main--sections">
             <div id="services">
               <a href="https://ration.jantasamvad.org/ration/"><div className="services--item" style={{backgroundImage: 'url('+ration+')'}}>
                 Apply for Ration
@@ -70,31 +75,38 @@ class LandingPage extends React.Component {
                 Compensation for Transport Providers
               </div></a>
             </div>
-            {/* link */}
-            <div id="downloadlist--btn"><img src={adobe} style={{marginRight: '8px'}} />Download list of shelters, ration centers and hunger relief centers</div>
-            {/* link */}
-          </main>
-          <aside style={{width: '200px'}} />
-          <footer>
-            {/* link */}
-            <div id="footer--actions">
+            <aside>
+              <div className="asideComponent">
+                <h6>Downloads</h6>
+                <div className="asideComponentItem"><img src={adobe} style={{marginRight: '8px'}} />List of shelters</div>
+                <div className="asideComponentItem"><img src={adobe} style={{marginRight: '8px'}} />List of hunger relief centers &amp; ration centers</div>
+              </div>
+              <div className="asideComponent" style={{marginBottom: '28px'}}>
+                <h6>Other Links</h6>
+                <div className="asideComponentItem" style={{color: '#878787'}}><img src={wa} style={{marginRight: '8px', height: '24px'}} />Delhi Govt. Corona Helpline 8800007722</div>
+                <div className="asideComponentItem" style={{color: '#878787'}}><img src={yt} style={{marginRight: '8px', height: '18px'}} />List of hunger relief centers &amp; ration centers</div>
+              </div>
               <div className="footercta" style={{background: '#EC4B4B', color: 'white'}}><img src={donate} style={{marginRight: '8px', height: '20px', fontWeight: 600}} />Donate to CM/LG Relief Fund </div>
-              <div className="footercta"><img src={wa} style={{marginRight: '8px', height: '24px'}} />Delhi Govt. Corona Helpline: 8800007722</div>
-              <div className="footercta"><img src={yt} style={{marginRight: '8px', height: '18px'}} />Delhi Govt. YouTube Channel </div>
-            </div>
+              <div className="asideComponent">
+                <h6 style={{borderBottom: 'none', paddingBottom: '5px'}}>Download Apps</h6>
+                <div>
+                  <img src={gplay} style={{marginRight: '6px'}} />
+                  <img src={appstore} />
+                </div>
+              </div>
+            </aside>
+          </div>
+        </main>
+        <footer>
+          <div id="footerlinks">
             {/* link */}
-            <img id="footerlogo" src={delhigovt} />
-            <div id="footerlinks">
-              {/* link */}
-              <div>Privacy Policy</div>
-              <div>About</div>
-              {/* link */}
-            </div>
-          </footer>
-          <div id="feedback--btn"><img src={feedback} style={{marginRight: '8px', height: '20px'}} />Got Feedback?</div>
-        </div>
+            <div>Privacy Policy</div>
+            <div>About</div>
+            {/* link */}
+          </div>
+        </footer>
+        <div id="feedback--btn"><img src={feedback} style={{marginRight: '8px', height: '20px'}} />Got Feedback?</div>
       </div>
-
     );
   }
 }

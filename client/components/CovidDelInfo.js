@@ -23,6 +23,8 @@ import testing from '../static/testing.png';
 import testing2 from '../static/testing2.png';
 import map from '../static/map.png';
 import mask from '../static/mask.png';
+import gplay from '../static/gplay.svg';
+import appstore from '../static/appstore.svg';
 
 class CovidDelInfo extends React.Component {
   componentDidMount() {
@@ -46,47 +48,57 @@ class CovidDelInfo extends React.Component {
             </ul>
           </div>
           <div id="header--right">
-            <ul id="header--right_content">
-              <li><img id="playbtn" src={playbadge}/></li>
-              <li><img id="delhigovt" src={delhigovt} /></li>
-            </ul>
           </div>
         </header>
         <main>
-          <h1>Information About Corona</h1>
-          <div id="symptoms">
-            <div id="symptoms--content">
-              Find out if you’re infected
-              <div id="test--btn">Take the test →</div>
-            </div>
+          <img className="logo" src={logo} style={{display: 'none'}} />
+          <div className="maintitlebar">
+            <h1>Information<br />About Corona</h1>
+            <img src={delhigovt} height="65px" />
           </div>
-          <div id="infogrid">
-            <div className="infogrid--item" style={{backgroundImage: 'url('+testing+')'}}>
-              Apply for Ration
+          <div id="main--sections">
+            <div id="symptoms">
+              <div id="symptomsmain">
+                <div id="symptoms--content">
+                  Find out if you’re infected
+                  <div id="test--btn">Take the test →</div>
+                </div>
+              </div>
+              <div className="infogrid--item" style={{backgroundImage: 'url('+testing+')'}}>
+                Apply for Ration
+              </div>
+              <div className="infogrid--item" style={{backgroundImage: 'url('+map+')', color: 'black'}}>
+                Find a Hunger Relief Center
+              </div>
+              <div className="infogrid--item" style={{backgroundImage: 'url('+testing2+')'}}>
+                Find a Shelter
+              </div>
+              <div className="infogrid--item" style={{backgroundImage: 'url('+mask+')', width: 'auto', height: '260px', gridColumn: '1/3'}} />
+              <h3>Infographics<br />about Covid19 →</h3>
             </div>
-            <div className="infogrid--item" style={{backgroundImage: 'url('+map+')', color: 'black'}}>
-              Find a Hunger Relief Center
-            </div>
-            <div className="infogrid--item" style={{backgroundImage: 'url('+testing2+')'}}>
-              Find a Shelter
-            </div>
-            <div className="infogrid--item" style={{backgroundImage: 'url('+mask+')', width: '320px', height: '160px'}} />
-            <div className="infogrid--item" style={{backgroundImage: 'url('+mask+')', width: '320px', height: '160px'}} />
-            <div className="infogrid--item" style={{backgroundImage: 'url('+mask+')', width: '320px', height: '160px'}} />
+            <aside>
+              <div className="asideComponent">
+                <h6>Downloads</h6>
+                <div className="asideComponentItem"><img src={adobe} style={{marginRight: '8px'}} />List of COVID Health Services</div>
+                <div className="asideComponentItem"><img src={adobe} style={{marginRight: '8px'}} />List of Containment Zones</div>
+              </div>
+              <div className="asideComponent" style={{marginBottom: '28px'}}>
+                <h6>Other Links</h6>
+                <div className="asideComponentItem" style={{color: '#878787'}}><img src={wa} style={{marginRight: '8px', height: '24px'}} />Delhi Govt. Corona Helpline 8800007722</div>
+                <div className="asideComponentItem" style={{color: '#878787'}}><img src={yt} style={{marginRight: '8px', height: '18px'}} />List of hunger relief centers &amp; ration centers</div>
+              </div>
+              <div className="footercta" style={{background: '#EC4B4B', color: 'white'}}><img src={donate} style={{marginRight: '8px', height: '20px', fontWeight: 600}} />Donate to CM/LG Relief Fund </div>
+              <div className="asideComponent">
+                <h6 style={{borderBottom: 'none', paddingBottom: '5px'}}>Download Apps</h6>
+                <div>
+                  <img src={gplay} style={{marginRight: '6px'}} />
+                  <img src={appstore} />
+                </div>
+              </div>
+            </aside>
           </div>
-          {/* link */}
-          <div id="downloadlist--btn"><img src={adobe} style={{marginRight: '8px'}} />Download list of COVID Health Services and Containment Zones</div>
-          {/* link */}
-          <h3 style={{marginTop: '30px'}}>View more infographics →</h3>
         </main>
         <footer>
-          {/* link */}
-          <div id="footer--actions">
-            <div className="footercta"><img src={wa} style={{marginRight: '8px', height: '20px'}} />Delhi Govt. Corona Helpline: 8800007722</div>
-            <div className="footercta"><img src={yt} style={{marginRight: '8px', height: '18px'}} />Delhi Govt. YouTube Channel </div>
-          </div>
-          {/* link */}
-          <img src={delhigovt} style={{height: '75px', marginTop: '50px'}} />
           <div id="footerlinks">
             {/* link */}
             <div>Privacy Policy</div>

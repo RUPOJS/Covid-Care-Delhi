@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600;700&display=swap');
 
 :root {
@@ -15,6 +15,11 @@
     transition: 0.2s;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -28,12 +33,16 @@ header {
     background-color: #E0ECFF;
     opacity: 0.9;
     display: flex;
-    padding: 0px 15px;
-    height: 60px;
+    padding: 0px 25px;
+    height: 65px;
     align-items: center;
     color: #397BDF;
     font-weight: 800;
     font-size: 14px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
 }
 
 #header--left {
@@ -73,8 +82,21 @@ ul {
 main {
     padding-top: 30px;
     text-align: center;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+}
+
+.maintitlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 75px;
+    margin-bottom: 40px;
+}
+
+.asideComponent {
+    text-align: left;
+    margin-bottom: 35px;
 }
 
 /*main::after {
@@ -117,13 +139,15 @@ main {
     margin-left: -46px;
 }
 
+
 h1 {
     color: var(--heading-color);
-    font-style: normal;
-    font-weight: 300;
-    font-size: 40px;
-    margin-bottom: 30px;
     font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 42px;
+    letter-spacing: 0.015em;
+    text-align: left;
 }
 
 h3 {
@@ -144,16 +168,50 @@ h5 {
     color: #234D8C;
 }
 
+h6 {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.21em;
+    color: #7DB1FF;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 10px;
+}
+
+aside {
+    width: 28%;
+}
+
+.asideComponentItem {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #E8E8E8;
+    padding: 15px 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+#main--sections {
+    display: flex;
+    justify-content: space-between;
+}
+
 #services {
     display: grid;
     font-style: normal;
     font-weight: 800;
     color: white;
-    margin-bottom: 35px;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 140px));
-    grid-gap: 20px;
-    justify-content: center;
-    justify-items: center;
+    margin-bottom: 25px;
+    width: 70%;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    justify-content: space-between;
+    grid-row-gap: 32px;
+    font-size: 16px;
 }
 
 #services-two {
@@ -199,8 +257,7 @@ h5 {
 }
 
 .services--item:hover {
-    transform: scale(1.05);
-    text-decoration: underline;
+    transform: scale(1.03);
 }
 
 #downloadlist--btn {
@@ -223,23 +280,58 @@ h5 {
 }
 
 #symptoms {
-    width: 100%;
-    margin: 0 auto;
-    height: 369px;
-    background-image: url(../../static/symptoms.png);
-    border-radius: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 70%;
     font-style: normal;
     font-weight: 800;
     font-size: 30px;
     letter-spacing: 0.05em;
     color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 280px));
+    justify-content: space-between;
+    grid-row-gap: 32px;
+    font-size: 16px;
+
+}
+
+#symptoms--content {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 34px;
+    letter-spacing: -0.015em;
+    color: white;
+}
+
+#symptoms h3 {
+    margin-top: 30px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0px 60px;
-    padding-top: 160px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 34px;
+    letter-spacing: -0.015em;
+    color: #234D8C;
+    text-align: left;
+}
+
+#symptomsmain {
+    background-image: url(../../static/symptoms.png);
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 302px;
+    grid-column: 1/4;
+    display: flex;
+    padding: 45px;
+    padding-top: 45px;
+    align-items: center;
+    padding-top: 165px;
+}
+
+#symptomsmain:hover {
+    transform: scale(1.03);
 }
 
 #test--btn {
@@ -253,17 +345,8 @@ h5 {
     margin-top: 20px;
 }
 
-#infogrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 338px));
-    grid-gap: 30px;
-    justify-content: center;
-    margin: 30px 0px;
-    justify-items: center;
-}
-
 .infogrid--item {
-    width: 320px;
+    width: 280px;
     height: 215px;
     background-position: center;
     background-repeat: no-repeat;
@@ -275,21 +358,23 @@ h5 {
     align-items: center;
     padding: 0px 25px;
     padding-top: 100px;
-    justify-items: center;
     font-style: normal;
     font-weight: 800;
     color: white;
 }
 
+.infogrid--item:hover {
+    transform: scale(1.03);
+}
+
 #updates {
     display: flex;
-    margin: 0 auto;
-    width: 80%;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 70%;
 }
 
 .update--item {
-    width: 320px;
+    width: 270px;
     height: 226px;
     background: white;
     border: 1px solid #D0D0D0;
@@ -407,9 +492,9 @@ h5 {
 
 #mapviz {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
-    margin: 50px auto;
+    margin: 30px auto;
     align-items: center;
 }
 
@@ -418,7 +503,7 @@ h5 {
     flex-direction: column;
     padding: 20px;
     position: static;
-    width: 317px;
+    width: 285px;
     left: 0px;
     background: white;
     border: 1px solid #D0D0D0;
@@ -464,8 +549,7 @@ h5 {
     letter-spacing: 0.06em;
     color: #8D8D8D;
     text-align: left;
-    width: 80%;
-    margin: 35px auto;
+    width: 100%;
 }
 
 footer {
@@ -499,6 +583,8 @@ footer {
     font-size: 14px;
     color: black;
     font-weight: 400;
+    width: 100%;
+    margin-bottom: 24px;
 }
 
 #footerlinks {
@@ -512,7 +598,7 @@ footer {
     width: 170px;
     margin: 0 auto;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 #feedback--btn {
@@ -541,12 +627,13 @@ footer {
     margin-top: 50px;
 }
 
- #services > a {
-        font-style: normal;
-        font-weight: 800;
-        color: white;
-        text-decoration: none;
-    }
+
+#services > a {
+    font-style: normal;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+}
 
 
 @media only screen and (max-width: 1375px) {
@@ -556,7 +643,7 @@ footer {
         font-weight: 800;
         color: white;
         margin-bottom: 35px;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
         grid-gap: 20px;
         justify-content: center;
         justify-items: center;
@@ -566,7 +653,7 @@ footer {
         font-weight: 800;
         color: white;
         text-decoration: none;
-    }    
+    } 
 
     #services-two {
         grid-column: auto;
